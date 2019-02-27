@@ -1,0 +1,40 @@
+<?php
+    $gameOver = false;
+    $gameWon = false;
+    $lettersArray = [
+        'a' => true,
+        'b' => true,
+        'c' => true,
+        'd' => true,
+        'e' => true,
+        'f' => true,
+        'g' => true,
+        'h' => true,
+        'i' => true,
+        'j' => true,
+        'k' => true,
+        'l' => true,
+        'm' => true,
+        'n' => true,
+        'o' => true,
+        'p' => true,
+        'q' => true,
+        'r' => true,
+        's' => true,
+        't' => true,
+        'u' => true,
+        'v' => true,
+        'w' => true,
+        'x' => true,
+        'y' => true,
+        'z' => true,
+    ];
+
+    $wordsArray = getWordsArray(); //words.txt
+    $wordIndex = getRandomIndex($wordsArray);
+    $word = strtolower(getWord($wordIndex, $wordsArray)); //prend un mot aléatoirement
+    $lettersCount = strlen($word);
+    $replacementString = getReplacementString($lettersCount);
+    $remainingTrials = MAX_TRIALS;
+    $trials = 0;
+    $triedLetters = '';
